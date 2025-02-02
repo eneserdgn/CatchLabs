@@ -40,74 +40,43 @@ CatchLabs/
 ├── pom.xml                         # Maven bağımlılıkları
 ├── testng.xml                      # Paralel test konfigürasyonu
 └── README.md
+```
 
-🛠️ Kurulum Rehberi
-Ön Gereksinimler
-Java JDK 17+
+---
 
-Maven 3.6+
+## 🛠️ Kurulum Rehberi
 
-IDE (IntelliJ IDEA önerilir)
+### 📋 Ön Gereksinimler
+- **Java JDK 11+** ([İndirme Linki](https://www.oracle.com/java/technologies/downloads/))
+- **Maven 3.6+** ([Kurulum Kılavuzu](https://maven.apache.org/install.html))
+- **IDE** (IntelliJ IDEA önerilir - [İndir](https://www.jetbrains.com/idea/))
+- **Git** ([İndirme Linki](https://git-scm.com/))
 
-Git
+---
 
-Adım Adım Kurulum
-Repoyu klonlayın:
+### 🔧 Adım Adım Kurulum
 
-bash
-Copy
-git clone https://github.com/eneserdgn/CatchLabs.git
-cd CatchLabs
-Bağımlılıkları yükleyin:
+1. **Repoyu Klonlayın**  
+   Terminalde aşağıdaki komutu çalıştırın:
+   ```bash
+   git clone https://github.com/eneserdgn/CatchLabs.git
+   cd CatchLabs
 
-bash
-Copy
-mvn clean install
-Browser konfigürasyonunu ayarlayın (src/main/resources/config.properties):
+2. **Bağımlılıkları Yükleyin**  
+   Proje dizininde Maven komutunu çalıştırın:
+   ```bash
+   mvn clean install
 
-properties
-Copy
-browser=chrome
-baseUrl=https://ornek-site.com
-⚡ Testleri Çalıştırma
-Temel Komutlar
-Komut	Açıklama
-mvn test	Tüm testleri çalıştır
-mvn test -Dcucumber.filter.tags="@smoke"	Sadece @smoke tag'li testleri çalıştır
-mvn test -Dbrowser=firefox	Firefox'ta testleri çalıştır
-Paralel Çalıştırma
-testng.xml dosyasını düzenleyerek thread sayısını ayarlayın:
+3. **Konfigürasyon Dosyasını Ayarlayın**  
+   src/main/resources/config.properties dosyasını düzenleyin:
+   ```bash
+   # Tarayıcı seçimi (Chrome/Firefox/Safari)
+    browser=Chrome
 
-xml
-Copy
-<suite name="Parallel Suite" parallel="tests" thread-count="3">
-Run HTML
-📊 Raporlama Sistemi
-Test sonuçları otomatik olarak oluşturulur:
+4. **IDE'de Projeyi Açın**  
 
-bash
-Copy
-target/
-├── cucumber-html-reports/  # Detaylı HTML raporlar
-└── cucumber.json           # JSON formatında ham veri
-Raporları görüntülemek için cucumber-html-reports klasöründeki overview-features.html dosyasını tarayıcıda açın.
+    IntelliJ IDEA'da:
+    - File > Open > pom.xml seçin
+    - "Open as Project" seçeneğini tıklayın
+    - Maven bağımlılıklarının otomatik yüklendiğinden emin olun
 
-🤝 Katkıda Bulunma
-Repoyu fork edin
-
-Yeni branch oluşturun:
-git checkout -b feature/yeni-özellik
-
-Değişiklikleri commit edin:
-git commit -m 'Yeni özellik eklendi: ...'
-
-Branch'i push edin:
-git push origin feature/yeni-özellik
-
-GitHub üzerinden Pull Request açın
-
-📜 Lisans Bilgisi
-Bu proje MIT lisansı ile lisanslanmıştır. Detaylar için LICENSE dosyasını inceleyin.
-
-Test Otomasyon Keyifli Olsun! 🧪🚀
-Enes Erdogan tarafından geliştirilmiştir.
