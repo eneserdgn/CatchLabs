@@ -1,112 +1,113 @@
-CatchLabs Test Automation Project
+# 🚀 CatchLabs Test Otomasyon Projesi
 
-Overview
+![Java](https://img.shields.io/badge/Java-17%2B-blue)
+![Maven](https://img.shields.io/badge/Maven-3.6%2B-orange)
+![Selenium](https://img.shields.io/badge/Selenium-4.0%2B-brightgreen)
+![TestNG](https://img.shields.io/badge/TestNG-7.6%2B-red)
 
-Welcome to the CatchLabs Test Automation project! This project utilizes Cucumber, Java, Selenium, and TestNG to provide a robust framework for UI testing. It is designed to be scalable and maintainable, ensuring high-quality test automation.
+Cucumber, Java ve Selenium tabanlı modern UI test framework'ü.  
+[**GitHub'da Görüntüle**](https://github.com/eneserdgn/CatchLabs/tree/master)
 
-Features
+---
 
-Behavior-Driven Development (BDD) using Cucumber
+## ✨ Temel Özellikler
+- ✔️ **BDD (Behavior-Driven Development)** - Gherkin syntax ile test senaryoları
+- ✔️ **Page Object Model (POM)** - Modüler ve sürdürülebilir kod yapısı
+- ✔️ **Cross-Browser Test** - Chrome/Firefox/Edge desteği
+- ✔️ **Paralel Test Çalıştırma** - TestNG ile thread yönetimi
+- ✔️ **Dinamik Konfigürasyon** - `config.properties` ile ortam ayarları
+- ✔️ **Zengin Raporlama** - HTML/JSON formatında detaylı raporlar
 
-Page Object Model (POM) architecture for modular and reusable test scripts
+---
 
-TestNG integration for powerful test execution
-
-Selenium WebDriver for browser automation
-
-Maven for dependency management and build automation
-
-Parallel Test Execution using TestNG
-
-Tag-based Test Execution
-
-Browser Configuration from config.properties
-
-Project Structure
-
+## 📂 Proje Yapısı
+```bash
 CatchLabs/
-│
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── utils/               # Utility classes
-│   │   └── resources/               # Configuration files
-│           └── config.properties    # Browser and environment settings
-
+│   │   │   └── utils/              # Yardımcı metodlar (DriverSetup, ConfigReader)
+│   │   └── resources/
+│   │       └── config.properties   # Browser & URL konfigürasyonları
 │   └── test/
 │       ├── java/
-│       │   ├── pages/              # Page classes
-│       │   ├── pageObjects/        # Page elements
-│       │   ├── stepDefinitions/    # Step definition classes
-│       │   └── runner/             # TestNG and Cucumber runners
+│       │   ├── pages/              # Page sınıfları (LoginPage, HomePage)
+│       │   ├── pageObjects/        # Web element locator'ları
+│       │   ├── stepDefinitions/    # Cucumber step tanımları
+│       │   └── runner/             # TestNG test koşucuları
 │       └── resources/
-│           ├── features/           # Feature files
-│
-├── pom.xml                          # Maven dependencies
-├── testng.xml          # TestNG configuration file
-└── README.md                        # Project documentation
+│           ├── features/           # .feature dosyaları (Gherkin senaryoları)
+├── pom.xml                         # Maven bağımlılıkları
+├── testng.xml                      # Paralel test konfigürasyonu
+└── README.md
 
-Getting Started
-
-Prerequisites
-
-Java JDK 8+
+🛠️ Kurulum Rehberi
+Ön Gereksinimler
+Java JDK 17+
 
 Maven 3.6+
 
-IDE (IntelliJ IDEA, Eclipse, etc.)
+IDE (IntelliJ IDEA önerilir)
 
 Git
 
-Setup
+Adım Adım Kurulum
+Repoyu klonlayın:
 
-Clone the repository:
-
+bash
+Copy
 git clone https://github.com/eneserdgn/CatchLabs.git
-
-Navigate to the project directory:
-
 cd CatchLabs
+Bağımlılıkları yükleyin:
 
-Install dependencies:
-
+bash
+Copy
 mvn clean install
+Browser konfigürasyonunu ayarlayın (src/main/resources/config.properties):
 
-Running Tests
-
-Run all tests:
-
-mvn test
-
-Run tests by tag:
-
-To execute specific scenarios using Cucumber tags, use:
-
-mvn test -Dcucumber.options="--tags @tagname"
-
-Run tests in parallel:
-
-You can define the number of parallel threads in testng.xml:
-
-<suite name="Parallel Suite" parallel="tests" thread-count="2">
-
-Set browser from config.properties:
-
-Define the browser type in config.properties:
-
+properties
+Copy
 browser=chrome
+baseUrl=https://ornek-site.com
+⚡ Testleri Çalıştırma
+Temel Komutlar
+Komut	Açıklama
+mvn test	Tüm testleri çalıştır
+mvn test -Dcucumber.filter.tags="@smoke"	Sadece @smoke tag'li testleri çalıştır
+mvn test -Dbrowser=firefox	Firefox'ta testleri çalıştır
+Paralel Çalıştırma
+testng.xml dosyasını düzenleyerek thread sayısını ayarlayın:
 
-Reporting
+xml
+Copy
+<suite name="Parallel Suite" parallel="tests" thread-count="3">
+Run HTML
+📊 Raporlama Sistemi
+Test sonuçları otomatik olarak oluşturulur:
 
-Test execution reports are generated using Cucumber Reports and can be found in the target/cucumber-reports/ directory.
+bash
+Copy
+target/
+├── cucumber-html-reports/  # Detaylı HTML raporlar
+└── cucumber.json           # JSON formatında ham veri
+Raporları görüntülemek için cucumber-html-reports klasöründeki overview-features.html dosyasını tarayıcıda açın.
 
-Contributing
+🤝 Katkıda Bulunma
+Repoyu fork edin
 
-Feel free to open issues or submit pull requests. Contributions are welcome!
+Yeni branch oluşturun:
+git checkout -b feature/yeni-özellik
 
-License
+Değişiklikleri commit edin:
+git commit -m 'Yeni özellik eklendi: ...'
 
-This project is licensed under the MIT License.
+Branch'i push edin:
+git push origin feature/yeni-özellik
 
-Happy Testing! 🚀
+GitHub üzerinden Pull Request açın
 
+📜 Lisans Bilgisi
+Bu proje MIT lisansı ile lisanslanmıştır. Detaylar için LICENSE dosyasını inceleyin.
+
+Test Otomasyon Keyifli Olsun! 🧪🚀
+Enes Erdogan tarafından geliştirilmiştir.
