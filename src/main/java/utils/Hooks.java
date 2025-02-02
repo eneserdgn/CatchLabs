@@ -27,7 +27,6 @@ public class Hooks {
 
     @AfterStep
     public void afterStep(Scenario scenario) throws IOException {
-
         TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
         String base64Screenshot = ts.getScreenshotAs(OutputType.BASE64);
         byte[] imageBytes = Base64.getDecoder().decode(base64Screenshot);

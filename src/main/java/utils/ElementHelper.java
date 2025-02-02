@@ -19,7 +19,7 @@ public class ElementHelper {
 
     public ElementHelper(WebDriver webDriver) {
         driver = webDriver;
-        wait = new WebDriverWait(webDriver, Duration.ofSeconds(40));
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
         actions = new Actions(driver);
         js = (JavascriptExecutor) driver;
     }

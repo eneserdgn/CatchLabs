@@ -7,6 +7,7 @@ Feature: Edit Account Cases
     When General, Click, Edit Account Button
     Then Popup, Check Text, Title: "Edit account"
     When Popup, Clear, Account Name
+    When Popup, Clear, Account Name
     Then Popup, Should See, Disable Update Button
 
   @EA2
@@ -14,6 +15,7 @@ Feature: Edit Account Cases
     Given User open app with Username: "enes.erdogan" and Password: "Enes.1995"
     When General, Click, Edit Account Button
     Then Popup, Check Text, Title: "Edit account"
+    When Popup, Clear, Account Name
     When Popup, SendKeys, Account Name: "1234"
     Then Popup, Should See, Disable Update Button
 
