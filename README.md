@@ -1,6 +1,6 @@
 # 🚀 CatchLabs Test Otomasyon Projesi
 
-![Java](https://img.shields.io/badge/Java-17%2B-blue)
+![Java](https://img.shields.io/badge/Java-11%2B-blue)
 ![Maven](https://img.shields.io/badge/Maven-3.6%2B-orange)
 ![Selenium](https://img.shields.io/badge/Selenium-4.0%2B-brightgreen)
 ![TestNG](https://img.shields.io/badge/TestNG-7.6%2B-red)
